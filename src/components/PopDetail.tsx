@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { FileText, FileFlow, CheckCircle, Clock } from 'lucide-react';
+import { FileText, Workflow, CheckCircle, Clock } from 'lucide-react';
 
 interface Step {
   title: string;
@@ -55,7 +55,7 @@ const PopDetail: React.FC<PopDetailProps> = ({
           
           <section className="space-y-6">
             <div className="flex items-center space-x-3">
-              <FileFlow className="text-primary" size={24} />
+              <Workflow className="text-primary" size={24} />
               <h2 className="text-2xl font-semibold">Procedimento Detalhado</h2>
             </div>
             
