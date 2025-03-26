@@ -31,7 +31,7 @@ const NavBar: React.FC = () => {
           to="/" 
           className="text-foreground font-medium text-xl tracking-tight hover:opacity-80 transition-opacity"
         >
-          <span className="text-primary font-semibold">DTI</span> POP Labyrinth
+          <span className="text-primary font-semibold">DTI</span> POP
         </Link>
         
         <div className="hidden md:flex items-center space-x-1">
