@@ -28,7 +28,7 @@ const Pops: React.FC = () => {
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold mb-4">Procedimentos Operacionais Padrão</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore todos os procedimentos padronizados da DTI para garantir consistência e qualidade nos serviços
+            Explore todos os procedimentos padronizados da DTI
           </p>
         </div>
         
@@ -37,7 +37,7 @@ const Pops: React.FC = () => {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
             <input 
               type="text" 
-              placeholder="Pesquisar POPs por título, descrição ou ID..." 
+              placeholder="Pesquisar POPs" 
               className="w-full py-3 pl-12 pr-4 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-subtle"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
