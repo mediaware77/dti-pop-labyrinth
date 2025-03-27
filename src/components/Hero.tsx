@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 animate-fade-up text-white">
         <div className="inline-block mb-3 px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
-          Procedimentos Operacionais Padrão
+          DIRETORIA DE TECNOLOGIA DA INFORMAÇÃO
         </div>
         
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
