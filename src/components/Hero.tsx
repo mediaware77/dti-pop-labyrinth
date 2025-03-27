@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         </h1>
         
         <p className="text-xl text-gray-300 max-w-3xl mx-auto"> {/* Adjusted text color */}
-          Navegue pelos procedimentos operacionais padronizados da Diretoria de Tecnologia da Informação da Secretaria de Administração.
+          Navegue pelos procedimentos operacionais padronizados da SAD - DTI.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">

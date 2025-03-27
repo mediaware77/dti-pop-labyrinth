@@ -113,7 +113,7 @@ const NavBar: React.FC = () => {
       {/* Mobile menu */}
       <div 
         className={cn(
-          "fixed inset-0 top-[72px] bg-background z-40 md:hidden transition-transform duration-300 ease-in-out",
+          "fixed inset-0 top-[72px] bg-background/95 backdrop-blur-sm shadow-lg z-40 md:hidden transition-transform duration-300 ease-in-out",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
