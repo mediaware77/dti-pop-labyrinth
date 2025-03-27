@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Search, Menu, X } from 'lucide-react';
+import Logo from './Logo';
 
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,11 +28,8 @@ const NavBar: React.FC = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link 
-          to="/" 
-          className="text-foreground font-medium text-xl tracking-tight hover:opacity-80 transition-opacity"
-        >
-          <span className="text-primary font-semibold">DTI</span> POP
+        <Link to="/" className="flex items-center">
+          <Logo />
         </Link>
         
         <div className="hidden md:flex items-center space-x-1">
@@ -57,12 +55,26 @@ const NavBar: React.FC = () => {
           </nav>
           
           <div className="ml-4 pl-4 border-l border-border/40">
-            <button 
-              className="p-2 text-foreground/60 hover:text-foreground transition-colors rounded-full hover:bg-muted"
-              aria-label="Pesquisar"
-            >
-              <Search size={18} />
-            </button>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              const input = e.currentTarget.querySelector('input');
+              if (input?.value) {
+                window.location.href = `/pops?search=${encodeURIComponent(input.value)}`;
+              }
+            }}>
+              <button 
+                type="submit"
+                className="p-2 text-foreground/60 hover:text-foreground transition-colors rounded-full hover:bg-muted"
+                aria-label="Pesquisar"
+              >
+                <Search size={18} />
+              </button>
+              <input
+                type="text"
+                placeholder="Buscar POPs..."
+                className="absolute right-12 w-0 opacity-0 focus:w-40 focus:opacity-100 transition-all duration-300 bg-background border border-border rounded-md px-2 py-1"
+              />
+            </form>
           </div>
         </div>
         

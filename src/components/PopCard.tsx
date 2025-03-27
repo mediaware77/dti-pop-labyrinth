@@ -8,10 +8,11 @@ interface PopCardProps {
   id: string;
   title: string;
   description: string;
+  imageUrl?: string; // Adiciona imageUrl às props
   className?: string;
 }
 
-const PopCard: React.FC<PopCardProps> = ({ id, title, description, className }) => {
+const PopCard: React.FC<PopCardProps> = ({ id, title, description, imageUrl, className }) => {
   return (
     <Link
       to={`/pop/${id}`}
@@ -20,6 +21,16 @@ const PopCard: React.FC<PopCardProps> = ({ id, title, description, className }) 
         className
       )}
     >
+      {/* Adiciona a imagem se imageUrl existir */}
+      {imageUrl && (
+        <div className="relative mb-4 aspect-video overflow-hidden rounded-lg">
+          <img 
+            src={imageUrl} 
+            alt={`Fluxograma para ${title}`} 
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      )}
       <div className="flex flex-col flex-1">
         <div className="mb-3">
           <span className="inline-block px-2.5 py-0.5 bg-primary/10 text-primary text-xs font-medium rounded-full">
@@ -27,7 +38,7 @@ const PopCard: React.FC<PopCardProps> = ({ id, title, description, className }) 
           </span>
         </div>
         
-        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors"> {/* Ajusta tamanho da fonte */}
           {title}
         </h3>
         

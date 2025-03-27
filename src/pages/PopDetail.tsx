@@ -46,6 +46,7 @@ const PopDetailPage: React.FC = () => {
           description={pop.description}
           objective={pop.objective}
           steps={pop.steps}
+          imageUrl={pop.imageUrl} // Passa a URL da imagem
         />
       </div>
     </Layout>

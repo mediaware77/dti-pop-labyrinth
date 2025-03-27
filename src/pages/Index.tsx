@@ -90,7 +90,7 @@ const Index = () => {
         <section className="animate-fade-up">
           <div className="py-10 px-8 md:p-10 bg-primary/5 rounded-xl border border-primary/10 text-center">
             <div className="max-w-3xl mx-auto space-y-6">
-              <h2 className="text-2xl font-bold">Contribua com este projeto</h2>
+              <h2 className="text-2xl font-bold">Sugira melhorias</h2>
               <p className="text-muted-foreground">
                 Este repositório de procedimentos é uma obra colaborativa em constante evolução. 
                 Se você identificou a necessidade de um novo procedimento ou deseja sugerir melhorias, 

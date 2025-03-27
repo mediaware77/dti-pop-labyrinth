@@ -10,6 +10,7 @@ export interface Pop {
   description: string;
   objective: string;
   steps: Step[];
+  imageUrl?: string; // Adiciona campo opcional para a URL da imagem
 }
 
 export const popData: Pop[] = [
@@ -43,7 +44,8 @@ export const popData: Pop[] = [
         title: "Finalização do atendimento",
         description: "O chamado é finalizado no sistema 1Doc com todas as informações relevantes sobre o atendimento realizado, incluindo data/hora e responsável pela execução."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-001.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.002",
@@ -87,7 +89,8 @@ export const popData: Pop[] = [
         title: "Recebimento e ateste",
         description: "A DTI realiza o recebimento provisório para testes e verificações técnicas, seguido do recebimento definitivo e ateste da nota fiscal após confirmação da conformidade técnica."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-002.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.003",
@@ -135,7 +138,8 @@ export const popData: Pop[] = [
         title: "Recebimento e fiscalização",
         description: "A DTI realiza o recebimento dos itens, verificando a conformidade com as especificações técnicas, e designa servidor para fiscalizar a execução do contrato."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-003.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.004",
@@ -175,7 +179,8 @@ export const popData: Pop[] = [
         title: "Comunicação ao usuário",
         description: "O usuário que abriu o chamado é formalmente informado sobre a conclusão do atendimento através do sistema 1Doc, incluindo as ações realizadas e eventuais recomendações."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-004.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.005",
@@ -223,7 +228,8 @@ export const popData: Pop[] = [
         title: "Encerramento e feedback",
         description: "O chamado é encerrado no sistema 1Doc com todas as informações pertinentes, solicitando feedback do usuário sobre a qualidade do atendimento e eficácia da solução."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-005.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.006",
@@ -271,7 +277,8 @@ export const popData: Pop[] = [
         title: "Registro de manutenção e encerramento",
         description: "Todas as ações realizadas, peças substituídas e tempo de serviço são registrados no histórico de manutenção do equipamento, e o chamado é encerrado com a descrição completa da solução."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-006.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.007",
@@ -319,7 +326,8 @@ export const popData: Pop[] = [
         title: "Relatório de envio",
         description: "É elaborado um relatório sucinto de envio, registrando a data, responsáveis, eventuais ocorrências e confirmação de recebimento, que é encaminhado às diretorias competentes da PMCG."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-007.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.008",
@@ -367,7 +375,8 @@ export const popData: Pop[] = [
         title: "Monitoramento e suporte",
         description: "Durante o período inicial de disponibilização, a DTI mantém monitoramento intensivo para identificar problemas técnicos e fornece suporte prioritário aos usuários que encontrem dificuldades de acesso."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-008.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.009",
@@ -419,7 +428,8 @@ export const popData: Pop[] = [
         title: "Operação assistida e manutenção",
         description: "Após a implantação, é realizado um período de operação assistida com suporte prioritário, seguido pelo estabelecimento de rotinas de manutenção evolutiva e corretiva conforme necessidades identificadas."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-009.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.010",
@@ -471,7 +481,8 @@ export const popData: Pop[] = [
         title: "Suporte pós-lançamento",
         description: "Durante o período inicial após o lançamento, a DTI mantém equipe dedicada para resolução rápida de eventuais problemas técnicos e suporte prioritário à Secretaria de Finanças para atendimento aos contribuintes."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-010.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.011",
@@ -527,7 +538,8 @@ export const popData: Pop[] = [
         title: "Documentação e transferência de conhecimento",
         description: "Elaboração de documentação detalhada da nova arquitetura, procedimentos operacionais e treinamento das equipes de suporte para o ambiente em nuvem."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-011.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.012",
@@ -583,7 +595,8 @@ export const popData: Pop[] = [
         title: "Plano de implementação",
         description: "Desenvolvimento de um plano de ação para implementação das melhorias propostas, incluindo priorização, recursos necessários, responsáveis e cronograma."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-012.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.013",
@@ -639,7 +652,8 @@ export const popData: Pop[] = [
         title: "Transferência de conhecimento",
         description: "Compartilhamento das informações sobre as modificações realizadas com a equipe de suporte, incluindo treinamento quando necessário para garantir a correta manutenção da nova configuração."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-013.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.014",
@@ -699,7 +713,8 @@ export const popData: Pop[] = [
         title: "Treinamento e entrega formal",
         description: "Realização de treinamento básico para os responsáveis locais e entrega formal da infraestrutura ao solicitante, com termo de aceite detalhando o escopo entregue e garantias aplicáveis."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-014.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.015",
@@ -763,7 +778,8 @@ export const popData: Pop[] = [
         title: "Avaliação para renovação ou encerramento",
         description: "Antes do término da vigência, elaboração de relatório avaliativo consolidado sobre o desempenho do fornecedor, recomendando fundamentadamente a renovação, modificação ou encerramento do contrato."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-015.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.016",
@@ -823,7 +839,8 @@ export const popData: Pop[] = [
         title: "Registro de conhecimento",
         description: "Problemas recorrentes ou soluções importantes são documentados na base de conhecimento da DTI para agilizar a resolução de casos similares no futuro e identificar padrões de falha."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-016.png" // Adiciona URL da imagem
   },
   {
     id: "POP.DTI.017",
@@ -887,6 +904,7 @@ export const popData: Pop[] = [
         title: "Monitoramento contínuo",
         description: "Após implantações significativas, é mantido monitoramento intensificado do sistema por período determinado, para identificar rapidamente eventuais problemas não detectados durante os testes."
       }
-    ]
+    ],
+    imageUrl: "/images/fluxo-017.png" // Adiciona URL da imagem
   }
 ];

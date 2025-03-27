@@ -14,6 +14,7 @@ interface PopDetailProps {
   description: string;
   objective: string;
   steps: Step[];
+  imageUrl?: string; // Adiciona imageUrl às props
   className?: string;
 }
 
@@ -23,6 +24,7 @@ const PopDetail: React.FC<PopDetailProps> = ({
   description,
   objective,
   steps,
+  imageUrl, // Recebe imageUrl
   className,
 }) => {
   return (
@@ -40,6 +42,19 @@ const PopDetail: React.FC<PopDetailProps> = ({
           {description}
         </p>
       </div>
+
+      {/* Adiciona a imagem se imageUrl existir, com largura máxima e centralizada */}
+      {imageUrl && (
+        <div className="my-8 flex justify-center">
+          <div className="max-w-2xl rounded-lg overflow-hidden border border-border shadow-md">
+            <img 
+              src={imageUrl} 
+              alt={`Fluxograma para ${title}`} 
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      )}
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
         <div className="col-span-1 md:col-span-2 space-y-10">

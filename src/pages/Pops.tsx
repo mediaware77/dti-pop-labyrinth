@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import PopCard from '@/components/PopCard';
 import { Search } from 'lucide-react';
@@ -7,7 +7,15 @@ import { popData } from '@/data/pops';
 
 const Pops: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const searchParams = new URLSearchParams(window.location.search);
+  const initialSearch = searchParams.get('search') || '';
   
+  useEffect(() => {
+    if (initialSearch) {
+      setSearchTerm(initialSearch);
+    }
+  }, [initialSearch]);
+
   const filteredPops = popData.filter(pop => 
     pop.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     pop.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -45,6 +53,7 @@ const Pops: React.FC = () => {
                 id={pop.id}
                 title={pop.title}
                 description={pop.description}
+                imageUrl={pop.imageUrl} // Passa a URL da imagem
               />
             ))}
           </div>

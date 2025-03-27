@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
         </h1>
         
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Navegue pelos procedimentos operacionais padronizados da Diretoria de Tecnologia da Informação da Prefeitura Municipal de Campina Grande.
+          Navegue pelos procedimentos operacionais padronizados da Diretoria de Tecnologia da Informação da Secretaria de Administração.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
             to="/sobre" 
             className="px-8 py-3 bg-secondary text-secondary-foreground font-medium rounded-md hover:bg-secondary/70 transition-colors"
           >
-            Sobre o Projeto
+            Sobre
           </Link>
         </div>
       </div>
