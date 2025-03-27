@@ -1,13 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Search, Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
 const NavBar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(window.scrollY > 10);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isOnHomepage = location.pathname === '/';
+
+  // Determine if dark theme styles (foreground text, colored logo) should be used
+  const useDarkTheme = isScrolled || !isOnHomepage;
+  const logoSrc = useDarkTheme ? "/2logo_dti.png" : "/branco_dti.png";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,26 +35,35 @@ const NavBar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <Logo />
+          <Logo logoSrc={logoSrc} />
         </Link>
         
         <div className="hidden md:flex items-center space-x-1">
           <nav className="flex items-center space-x-1">
-            <Link 
-              to="/" 
-              className="px-4 py-2 text-sm text-foreground/80 hover:text-foreground transition-colors rounded-md"
+            <Link
+              to="/"
+              className={cn(
+                "px-4 py-2 text-sm transition-colors rounded-md",
+                useDarkTheme ? "text-foreground/80 hover:text-foreground" : "text-white hover:text-gray-300"
+              )}
             >
               Início
             </Link>
-            <Link 
-              to="/pops" 
-              className="px-4 py-2 text-sm text-foreground/80 hover:text-foreground transition-colors rounded-md"
+            <Link
+              to="/pops"
+              className={cn(
+                "px-4 py-2 text-sm transition-colors rounded-md",
+                useDarkTheme ? "text-foreground/80 hover:text-foreground" : "text-white hover:text-gray-300"
+              )}
             >
               Procedimentos
             </Link>
-            <Link 
-              to="/sobre" 
-              className="px-4 py-2 text-sm text-foreground/80 hover:text-foreground transition-colors rounded-md"
+            <Link
+              to="/sobre"
+              className={cn(
+                "px-4 py-2 text-sm transition-colors rounded-md",
+                useDarkTheme ? "text-foreground/80 hover:text-foreground" : "text-white hover:text-gray-300"
+              )}
             >
               Sobre
             </Link>
@@ -62,9 +77,14 @@ const NavBar: React.FC = () => {
                 window.location.href = `/pops?search=${encodeURIComponent(input.value)}`;
               }
             }}>
-              <button 
+              <button
                 type="submit"
-                className="p-2 text-foreground/60 hover:text-foreground transition-colors rounded-full hover:bg-muted"
+                className={cn(
+                  "p-2 transition-colors rounded-full",
+                  useDarkTheme
+                    ? "text-foreground/60 hover:text-foreground hover:bg-muted" 
+                    : "text-white hover:text-gray-300 hover:bg-white/10"
+                )}
                 aria-label="Pesquisar"
               >
                 <Search size={18} />
@@ -78,8 +98,11 @@ const NavBar: React.FC = () => {
           </div>
         </div>
         
-        <button 
-          className="md:hidden p-2 text-foreground/80 hover:text-foreground transition-colors"
+        <button
+          className={cn(
+            "md:hidden p-2 transition-colors",
+            useDarkTheme ? "text-foreground/80 hover:text-foreground" : "text-white hover:text-gray-300"
+          )}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
