@@ -139,17 +139,6 @@ const NavBar: React.FC = () => {
           >
             Sobre
           </Link>
-          
-          <div className="px-4 py-3">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-              <input 
-                type="text" 
-                placeholder="Pesquisar POPs..." 
-                className="w-full py-2 pl-10 pr-4 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </header>
