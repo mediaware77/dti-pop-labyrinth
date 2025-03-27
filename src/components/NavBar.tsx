@@ -68,34 +68,6 @@ const NavBar: React.FC = () => {
               Sobre
             </Link>
           </nav>
-          
-          <div className="ml-4 pl-4 border-l border-border/40">
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              const input = e.currentTarget.querySelector('input');
-              if (input?.value) {
-                window.location.href = `/pops?search=${encodeURIComponent(input.value)}`;
-              }
-            }}>
-              <button
-                type="submit"
-                className={cn(
-                  "p-2 transition-colors rounded-full",
-                  useDarkTheme
-                    ? "text-foreground/60 hover:text-foreground hover:bg-muted" 
-                    : "text-white hover:text-gray-300 hover:bg-white/10"
-                )}
-                aria-label="Pesquisar"
-              >
-                <Search size={18} />
-              </button>
-              <input
-                type="text"
-                placeholder="Buscar POPs..."
-                className="absolute right-12 w-0 opacity-0 focus:w-40 focus:opacity-100 transition-all duration-300 bg-background border border-border rounded-md px-2 py-1"
-              />
-            </form>
-          </div>
         </div>
         
         <button
