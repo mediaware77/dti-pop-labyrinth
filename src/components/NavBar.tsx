@@ -113,28 +113,28 @@ const NavBar: React.FC = () => {
       {/* Mobile menu */}
       <div 
         className={cn(
-          "fixed inset-0 top-[72px] bg-background/95 backdrop-blur-sm shadow-lg z-40 md:hidden transition-transform duration-300 ease-in-out",
+          "fixed inset-0 top-[72px] bg-gray-900/95 backdrop-blur-sm shadow-lg z-40 md:hidden transition-transform duration-300 ease-in-out",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
         <div className="p-6 flex flex-col space-y-6">
           <Link 
             to="/" 
-            className="px-4 py-3 text-lg font-medium hover:bg-muted rounded-md"
+            className="px-4 py-3 text-lg font-medium text-white hover:bg-gray-800 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Início
           </Link>
           <Link 
             to="/pops" 
-            className="px-4 py-3 text-lg font-medium hover:bg-muted rounded-md"
+            className="px-4 py-3 text-lg font-medium text-white hover:bg-gray-800 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Procedimentos
           </Link>
           <Link 
             to="/sobre" 
-            className="px-4 py-3 text-lg font-medium hover:bg-muted rounded-md"
+            className="px-4 py-3 text-lg font-medium text-white hover:bg-gray-800 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Sobre
@@ -142,11 +142,11 @@ const NavBar: React.FC = () => {
           
           <div className="px-4 py-3">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
               <input 
                 type="text" 
                 placeholder="Pesquisar POPs..." 
-                className="w-full py-2 pl-10 pr-4 bg-muted/50 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full py-2 pl-10 pr-4 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
           </div>
