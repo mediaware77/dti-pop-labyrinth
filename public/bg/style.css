@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #0a0f1a; /* Dark blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.svg-container {
+    width: 80%;
+    max-width: 1200px;
+    aspect-ratio: 3 / 1; /* Maintain aspect ratio similar to viewBox */
+}
+
+svg path {
+    fill: none;
+    stroke-linecap: round; /* Smoother line ends */
+}
+
+svg circle {
+    fill: rgba(173, 216, 230, 0.7); /* Light blue particles */
+    /* Basic twinkle animation */
+    animation: twinkle 2s infinite alternate ease-in-out;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 0.8; transform: scale(1.2); }
+}

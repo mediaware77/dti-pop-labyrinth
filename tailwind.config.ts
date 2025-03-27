@@ -113,8 +113,11 @@ export default {
         "slide-down": "slide-down 0.5s ease-out",
       },
       fontFamily: {
-        sans: ["'SF Pro Display'", "Inter", "sans-serif"],
+        // Add Poppins as the primary sans-serif font
+        sans: ["Poppins", "'SF Pro Display'", "Inter", "sans-serif"], 
         mono: ["'SF Mono'", "monospace"],
+        // Add Righteous for potential use (though Logo component will handle it directly)
+        righteous: ["Righteous", "cursive"], 
       },
       boxShadow: {
         subtle: "0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)",
