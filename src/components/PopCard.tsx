@@ -12,10 +12,10 @@ interface PopCardProps {
 }
 
 const PopCard: React.FC<PopCardProps> = ({ id, title, description, imageUrl, className }) => {
-  // Garante que a URL da imagem comece com /public/images/
-  const fullImageUrl = imageUrl?.startsWith('/public/images/') 
-    ? imageUrl 
-    : `/public/images/${imageUrl}`;
+  // Corrige o caminho da imagem para funcionar tanto em desenvolvimento quanto em produção
+  const fullImageUrl = imageUrl?.startsWith('/images/') || imageUrl?.startsWith('/public/images/') 
+    ? imageUrl.replace('/public/', '/') 
+    : `/images/${imageUrl}`;
 
   return (
     <Link

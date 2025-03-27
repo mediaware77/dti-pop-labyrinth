@@ -48,7 +48,7 @@ const PopDetail: React.FC<PopDetailProps> = ({
         <div className="my-8 flex justify-center">
           <div className="max-w-2xl rounded-lg overflow-hidden border border-border shadow-md">
             <img 
-              src={imageUrl} 
+              src={imageUrl?.replace('/public/', '/')} 
               alt={`Fluxograma para ${title}`} 
               className="w-full h-auto"
             />
