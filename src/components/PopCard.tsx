@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -8,11 +7,16 @@ interface PopCardProps {
   id: string;
   title: string;
   description: string;
-  imageUrl?: string; // Adiciona imageUrl às props
+  imageUrl?: string;
   className?: string;
 }
 
 const PopCard: React.FC<PopCardProps> = ({ id, title, description, imageUrl, className }) => {
+  // Garante que a URL da imagem comece com /public/images/
+  const fullImageUrl = imageUrl?.startsWith('/public/images/') 
+    ? imageUrl 
+    : `/public/images/${imageUrl}`;
+
   return (
     <Link
       to={`/pop/${id}`}
@@ -21,11 +25,10 @@ const PopCard: React.FC<PopCardProps> = ({ id, title, description, imageUrl, cla
         className
       )}
     >
-      {/* Adiciona a imagem se imageUrl existir */}
       {imageUrl && (
         <div className="relative mb-4 aspect-video overflow-hidden rounded-lg">
           <img 
-            src={imageUrl} 
+            src={fullImageUrl} 
             alt={`Fluxograma para ${title}`} 
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
@@ -38,7 +41,7 @@ const PopCard: React.FC<PopCardProps> = ({ id, title, description, imageUrl, cla
           </span>
         </div>
         
-        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors"> {/* Ajusta tamanho da fonte */}
+        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
           {title}
         </h3>
         
